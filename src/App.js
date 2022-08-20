@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Weathercard from "./components/Weathercard";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [cityname, setCityname] = useState("ahmedabad");
+  const [info, setInfo] = useState({});
+
+  const getWeatherInfo = async () => {
+    try {
+      let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&units=metric&appid=5e082b8bc55ccb6985089b0db222616b`;
+
+      let res = await fetch(url);
+      let data = await res.json();
+
+      const { temp } = data.main;
+      const { main: weathermood } = data.weather[0];
+      const { name } = data;
+      const { speed } = data.wind;
+      const { country } = data.sys;
+
+      const WeatherInfo = {
+        temp,
+        weathermood,
+        name,
+        speed,
+        country,
+      };
+
+      setInfo(WeatherInfo);
+    } catch (error) {
+      
+    }
+  };
+
+  useEffect(() => {
+    getWeatherInfo();
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <div class="main">
+    <div class="weatherInfo">
+      <div class="searchbox">
+        <input type="search" class="Search" placeholder= "city name" value={cityname} onChange = {(e) => setCityname(e.target.value.trim().toLowerCase())}>
+        </input>
+        <button type="submit" class="btn" onClick = {getWeatherInfo}>search</button>
+      </div>
+      {/* our temp card  */}
+      <Weathercard {...info} />
+      </div>
+      </div>
+    </>
   );
-}
+};
 
 export default App;
