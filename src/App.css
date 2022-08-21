@@ -1,9 +1,5 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.9/css/weather-icons.min.css);;
 
-body {
-  font-size: 15pt;
-}
-
 html {
   font-size: 10px;
   background: #282c34;
@@ -18,9 +14,8 @@ html {
 }
 
 .weatherInfo {
-  padding: 3rem;
+  padding: 1rem;
   display: grid;
-  grid-gap: 0.8rem;
   place-items: center;
   grid-template-rows: 0.5fr repeat(1, 2fr) 2.5fr;
   border-radius: 1rem;
@@ -35,7 +30,7 @@ font-size: 10rem;
   text-shadow: rgba(60, 234, 255, 0.3) 0rem 0.8rem 3.4rem, rgba(60, 234, 255, 0.1) 0rem 0.8rem 3.4rem, rgba(60, 234, 255, 0.6) 0rem 0.8rem 3.4rem;
 }
 .Search{
-    border: 1px solid rgba(112, 119, 204, 0.1);
+    border: 0.1rem solid rgba(112, 119, 204, 0.1);
     background: rgba(2, 140, 152, 0.1);
     color: whitesmoke;
     padding: 0.5rem;
@@ -54,7 +49,7 @@ font-size: 10rem;
   /* color: rgba(255, 255, 255, 0.8); */
    color: rgba(60, 234, 255, 1);
   display: grid;
-  grid-gap: 0.3rem;
+  grid-gap: 0rem;
   padding: 0.1rem;
   place-items: center;
   grid-template-rows: 1fr 1fr;
@@ -84,31 +79,31 @@ font-size: 10rem;
 
 @media (min-width:320px)  { 
   html{
-  font-size: 7px;
+  font-size: 8px;
 }
 }
 @media (min-width: 480px)  { /* smartphones, Android phones, landscape iPhone */ 
   html{
-  font-size: 20px !important;
+  font-size: 12px !important;
 }
 }
 @media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
 
   html{
-  font-size: 30px;
+  font-size: 18px;
 }
 }
 @media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */
 html{
-  font-size: 40px;
+  font-size: 25px;
 }}
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ 
   html{
-  font-size: 50px;
+  font-size: 32px;
 }
 }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ 
+@media (min-width:1349px) { /* hi-res laptops and desktops */ 
   html{
-  font-size: 60px;
+  font-size: 37px;
 }
 }
