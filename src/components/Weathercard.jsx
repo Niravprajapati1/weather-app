@@ -13,7 +13,7 @@ const Weathercard = ({
     if (weathermood) {
       switch (weathermood) {
         case "Clouds":
-          setWeatheState("wi-day-cloudy");
+          setWeatheState("wi-cloudy");
           break;
         case "Haze":
           setWeatheState("wi-fog");
@@ -24,7 +24,11 @@ const Weathercard = ({
         case "Mist":
           setWeatheState("wi-dust");
           break;
-
+          
+        case "Rain":
+          setWeatheState("wi-rain-wind");
+          break;
+        
         default:
           setWeatheState("wi-day-sunny");
           break;
