@@ -1,7 +1,7 @@
 # Weather app
 
 A weather app using react. i used openwaether api for weather data
-
+web-app link : [Open](https://op-weather.vercel.app/)
 ## Available Scripts
 
 In the project directory, you can run:
